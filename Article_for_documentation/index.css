@@ -1,30 +1,56 @@
 body {
     display: flex;
-    justify-content: flex-start;
     padding: 20px;
+    font-family: Calibri;
 }
 
-p {
-    margin-left: 30px;
-    font-size: 17px;
+h2 {
+    position: relative;
 }
 
-table {
-    border-collapse: collapse;
+h2::after {
+    content: '';
+    visibility: hidden;
+    position: absolute;
+    margin-left: 5px;
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 10px;
+h2:hover::after {
+    content: '#';
+    visibility: visible;
+}
+
+#page-content-container {
+    margin-left: 10%;
+    padding: 1rem;
+}
+
+#nav-panel-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 100vh;
+    background-color: rgb(170, 170, 170);
+    display: flex;
     align-items: center;
-  }
-
-li {
-    padding: 5px;
+    justify-content: center;
+    flex-direction: column;
+    border-right: 3px solid black;
 }
 
-li span {
-    font-size: 15px;
+#nav-panel-container a {
+    padding: 1rem;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#main-title-link, #params-title-link {
+    color: black;
+}
+
+#description-title-link {
+    color: #2000d3;
 }
 
 #main-title {
@@ -36,10 +62,40 @@ li span {
     padding-right: 5%;
 }
 
-#example-image-container, #params-table {
+#description-text-container p {
+    margin-left: 30px;
+    font-size: 17px;
+}
+
+#example-image-container {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+#params-table {
+    width: 80%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+#params-table tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+#params-table tr:nth-child(even) {
+    background-color: white;
+}
+
+#params-table th, #params-table td {
+    border: 1px solid #bdbdbd;
+    padding: 8px;
+}
+
+#params-table th {
+    text-align: center;
 }
 
 #example-image {
@@ -51,7 +107,25 @@ li span {
     font-size: 16px;
 }
 
-#nav-panel-container {
-    width: 20%;
-    background-color: gray;
+#application-container ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+#application-container ul li {
+    position: relative;
+    font-size: 18px;
+    padding-left: 40px;
+}
+
+#application-container ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url('arrow-right-svgrepo-com.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
