@@ -1,0 +1,38 @@
+body {
+    padding: 20px;
+}
+
+#main-title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#description-text-container {
+    padding-right: 5%;
+}
+
+p {
+    margin-left: 30px;
+    font-size: 17px;
+}
+
+#example-image-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#example-image {
+    width: 50%;
+    border: 3px black solid;
+}
+
+#example-image-label {
+    font-size: 16px;
+}
+
+#params-table {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
