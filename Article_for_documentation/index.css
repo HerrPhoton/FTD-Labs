@@ -39,17 +39,18 @@ h2:hover::after {
     border-right: 3px solid black;
 }
 
-#nav-panel-container a {
-    padding: 1rem;
+#nav-panel-container button {
+    width: 80%;
+    height: 5%;
     font-size: 20px;
-    text-decoration: none;
+    margin-top: 1rem;
 }
 
-#main-title-link, #params-title-link {
+#main-title-button, #params-title-button {
     color: black;
 }
 
-#description-title-link {
+#description-title-button {
     color: #2000d3;
 }
 
