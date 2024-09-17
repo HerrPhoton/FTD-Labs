@@ -2,10 +2,13 @@ body {
     display: flex;
     padding: 20px;
     font-family: Calibri;
+    color: #d1f9ff;
+    background: #01012a;
 }
 
 h2 {
     position: relative;
+    color: #ff296d;
 }
 
 h2::after {
@@ -31,12 +34,12 @@ h2:hover::after {
     left: 0;
     width: 10%;
     height: 100vh;
-    background-color: rgb(170, 170, 170);
+    background-color: #005679;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-right: 3px solid black;
+    border-right: 3px solid  #05d8e8;
 }
 
 #nav-panel-container button {
@@ -44,19 +47,22 @@ h2:hover::after {
     height: 5%;
     font-size: 20px;
     margin-top: 1rem;
+    background: #01012a;
 }
 
 #main-title-button, #params-title-button {
-    color: black;
+    color: #05d8e8;
 }
 
 #description-title-button {
-    color: #2000d3;
+    color:#ff296d;
 }
 
 #main-title {
     text-align: center;
     padding-bottom: 30px;
+    background: #fbb4cb;
+    color: #005679;
 }
 
 #description-text-container {
@@ -80,18 +86,19 @@ h2:hover::after {
     table-layout: fixed;
     margin: 0 auto;
     padding: 10px;
+    color: #005679;
 }
 
 #params-table tr:nth-child(odd) {
-    background-color: #f2f2f2;
+    background-color:#b6f6fb;
 }
 
 #params-table tr:nth-child(even) {
-    background-color: white;
+    background-color:#fbb4cb;
 }
 
 #params-table th, #params-table td {
-    border: 1px solid #bdbdbd;
+    border: 1px solid #b6f6fb;
     padding: 8px;
 }
 
@@ -101,7 +108,7 @@ h2:hover::after {
 
 #example-image {
     width: 50%;
-    border: 3px black solid;
+    border: 3px #05d8e8 solid;
 }
 
 #example-image-label {
@@ -126,7 +133,7 @@ h2:hover::after {
     top: 0;
     width: 20px;
     height: 20px;
-    background-image: url('arrow-right-svgrepo-com.svg');
+    background-image: url('icon.png');
     background-size: contain;
     background-repeat: no-repeat;
 }
