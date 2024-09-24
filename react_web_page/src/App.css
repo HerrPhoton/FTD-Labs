@@ -1,0 +1,139 @@
+body {
+  display: flex;
+  padding: 20px;
+  font-family: Calibri;
+  color: #d1f9ff;
+  background: #01012a;
+}
+
+h2 {
+  position: relative;
+  color: #ff296d;
+}
+
+h2::after {
+  content: '';
+  visibility: hidden;
+  position: absolute;
+  margin-left: 5px;
+}
+
+h2:hover::after {
+  content: '#';
+  visibility: visible;
+}
+
+#description-content-container {
+  margin-left: 10%;
+  padding: 1rem;
+}
+
+#nav-panel-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100vh;
+  background-color: #005679;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-right: 3px solid  #05d8e8;
+}
+
+#nav-panel-container button {
+  width: 80%;
+  height: 5%;
+  font-size: 20px;
+  margin-top: 1rem;
+  background: #01012a;
+}
+
+#nav-panel-container button.inactive {
+  color: #05d8e8;
+}
+
+#nav-panel-container button.active {
+  color:#ff296d;
+}
+
+#main-title {
+  text-align: center;
+  padding-bottom: 30px;
+  background: #fbb4cb;
+  color: #005679;
+}
+
+#description-text-container {
+  padding-right: 5%;
+}
+
+#description-text-container p {
+  margin-left: 30px;
+  font-size: 17px;
+}
+
+#example-image-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#params-table {
+  width: 80%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin: 0 auto;
+  padding: 10px;
+  color: #005679;
+}
+
+#params-table tr:nth-child(odd) {
+  background-color:#b6f6fb;
+}
+
+#params-table tr:nth-child(even) {
+  background-color:#fbb4cb;
+}
+
+#params-table th, #params-table td {
+  border: 1px solid #b6f6fb;
+  padding: 8px;
+}
+
+#params-table th {
+  text-align: center;
+}
+
+#example-image {
+  width: 50%;
+  border: 3px #05d8e8 solid;
+}
+
+#example-image-label {
+  font-size: 16px;
+}
+
+#application-container ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+#application-container ul li {
+  position: relative;
+  font-size: 18px;
+  padding-left: 40px;
+}
+
+#application-container ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url('../public/icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
