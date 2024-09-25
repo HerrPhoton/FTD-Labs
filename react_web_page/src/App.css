@@ -80,7 +80,7 @@ h2:hover::after {
   flex-direction: column;
 }
 
-#params-table {
+table {
   width: 80%;
   border: 3px #05d8e8 solid;
   border-collapse: collapse;
@@ -90,20 +90,20 @@ h2:hover::after {
   color: #005679;
 }
 
-#params-table tr:nth-child(odd) {
+table tr:nth-child(odd) {
   background-color:#b6f6fb;
 }
 
-#params-table tr:nth-child(even) {
+table tr:nth-child(even) {
   background-color:#fbb4cb;
 }
 
-#params-table th, #params-table td {
+table th, table td {
   border: 1px solid #b6f6fb;
   padding: 8px;
 }
 
-#params-table th {
+table th {
   text-align: center;
 }
 

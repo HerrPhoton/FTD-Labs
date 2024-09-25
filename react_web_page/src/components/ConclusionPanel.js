@@ -20,11 +20,36 @@ function ConclusionPanel()
 
                     <p>
                         <span>
-                            Результат был настолько хороший, что меня даже не стали отчислять.
+                            Результат был очень хороший, мне понравилось.
                         </span>
                     </p>
 
                 </div>
+
+            </div>
+
+            <div id="metrics-container">
+
+                <h2 class="title" id="metrics-title">Метрики</h2><br/>
+
+                    <table id="metrics-table">
+
+                        <tr>
+                            <th>Название Метрики</th>
+                            <th>Значение</th>
+                        </tr>
+
+                        <tr>
+                            <td>Метрика 1</td>
+                            <td>Отличная</td>
+                        </tr>
+
+                        <tr>
+                            <td>Метрика 2</td>
+                            <td>Неплохая</td>
+                        </tr>
+
+                    </table>
 
             </div>
 
