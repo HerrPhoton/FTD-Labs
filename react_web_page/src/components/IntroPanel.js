@@ -1,7 +1,7 @@
 function IntroPanel() 
 {
     return (
-        <div id="intro-content-container">
+        <div id="intro-content-container" class="page">
 
             <h1 class="title" id="main-title">Пересекающиеся части в аудиозаписях музыкальных произведений</h1>
 
@@ -9,7 +9,7 @@ function IntroPanel()
 
                 <h2 class="title" id="intro-title">Введение</h2>
 
-                <div id="intro-text-container">
+                <div id="intro-text-container" class="text-container">
 
                     <p>
                         <span>
@@ -31,6 +31,11 @@ function IntroPanel()
                     </p>
 
                 </div>
+
+            </div>
+
+            <div id="image-container">
+                <img src="logo.jpg" alt="logo" id="logo-image"/><br/>
             </div>
 
         </div>

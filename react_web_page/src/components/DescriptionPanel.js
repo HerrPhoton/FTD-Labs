@@ -1,7 +1,7 @@
 function DescriptionPanel() 
 {
     return (
-        <div id="description-content-container">
+        <div id="description-content-container" class="page">
 
             <h1 class="title" id="main-title">Пересекающиеся части в аудиозаписях музыкальных произведений</h1>
 
@@ -9,10 +9,13 @@ function DescriptionPanel()
 
                 <h2 class="title" id="description-title">Описание</h2>
 
-                <div id="description-text-container">
+                <div id="description-text-container" class="text-container">
 
                     <p>
-                        <span>Описание</span>
+                        <span>
+                            Входные аудиозаписи переводятся в спектрограмму. 
+                            Затем нейросетевой алгоритм обрабатывает данные изображения для выявления пересекающихся частей. 
+                        </span>
                     </p>
 
                 </div>
@@ -22,8 +25,8 @@ function DescriptionPanel()
 
                 <h2 class="title" id="example-title">Пример</h2><br/>
 
-                <div id="example-image-container">
-                    <img src="example.jpg" alt="example" id="example-image"/><br/>
+                <div id="image-container">
+                    <img src="spectr.png" alt="example" id="example-image"/><br/>
                     <span id="example-image-label">Рис. 1. Пример поиска пересекающихся частей по двум входных аудиозаписях</span>
                 </div>
 
