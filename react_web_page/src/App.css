@@ -1,9 +1,13 @@
 body {
-  display: flex;
-  padding: 20px;
   font-family: Calibri;
   color: #d1f9ff;
   background: #01012a;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh; 
+  padding-left: 10%;
 }
 
 h2 {
@@ -24,15 +28,18 @@ h2:hover::after {
 }
 
 .page {
-  margin-left: 10%;
-  padding: 1rem;
+  width: 90vw;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 #nav-panel-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 10%;
+  width: 10vw;
   height: 100vh;
   background-color: #005679;
   display: flex;
@@ -137,4 +144,24 @@ table th {
   background-image: url('../public/icon.png');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.slider {
+  width: 20%;
+}
+
+#slider-container, #posts-list {
+  margin-left: 30px;
+  padding-right: 5%;
+}
+
+#posts-list {
+  margin-top: 20px;
+}
+
+#posts-list #post {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
 }
