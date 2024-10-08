@@ -5,12 +5,13 @@ import DescriptionPanel from './components/DescriptionPanel';
 import IntroPanel from './components/IntroPanel';
 import NavPanel from './components/NavPanel';
 import PostsPanel from './components/PostsPanel';
+import APIPanel from './components/APIPanel';
+import InvertImgPanel from './components/InvertImgPanel';
 
-
-function App() 
+function App()
 {
   return (
-    <div class="app-container">
+    <div className="app-container">
         <NavPanel/>
 
         <Routes>
@@ -18,6 +19,8 @@ function App()
           <Route path="/description" element={<DescriptionPanel />} />
           <Route path="/posts" element={<PostsPanel />} />
           <Route path="/conclusion" element={<ConclusionPanel />} />
+          <Route path="/invert" element={<InvertImgPanel />} />
+          <Route path="/api" element={<APIPanel />} />
         </Routes>
 
     </div>

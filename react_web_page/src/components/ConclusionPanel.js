@@ -1,15 +1,15 @@
-function ConclusionPanel() 
+function ConclusionPanel()
 {
     return (
-        <div id="conclusion-content-container" class="page">
+        <div id="conclusion-content-container" className="page">
 
-            <h1 class="title" id="main-title">Пересекающиеся части в аудиозаписях музыкальных произведений</h1>
+            <h1 className="title" id="main-title">Пересекающиеся части в аудиозаписях музыкальных произведений</h1>
 
             <div id="conclusion-container">
 
-                <h2 class="title" id="conclusion-title">Заключение</h2>
+                <h2 className="title" id="conclusion-title">Заключение</h2>
 
-                <div id="conclusion-text-container" class="text-container">
+                <div id="conclusion-text-container" className="text-container">
 
                     <p>
                         <span>
@@ -30,7 +30,7 @@ function ConclusionPanel()
 
             <div id="metrics-container">
 
-                <h2 class="title" id="metrics-title">Метрики</h2><br/>
+                <h2 className="title" id="metrics-title">Метрики</h2><br/>
 
                     <table id="metrics-table">
 

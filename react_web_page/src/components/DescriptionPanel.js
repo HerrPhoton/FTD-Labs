@@ -1,20 +1,20 @@
-function DescriptionPanel() 
+function DescriptionPanel()
 {
     return (
-        <div id="description-content-container" class="page">
+        <div id="description-content-container" className="page">
 
-            <h1 class="title" id="main-title">Пересекающиеся части в аудиозаписях музыкальных произведений</h1>
+            <h1 className="title" id="main-title">Пересекающиеся части в аудиозаписях музыкальных произведений</h1>
 
             <div id="description-container">
 
-                <h2 class="title" id="description-title">Описание</h2>
+                <h2 className="title" id="description-title">Описание</h2>
 
-                <div id="description-text-container" class="text-container">
+                <div id="description-text-container" className="text-container">
 
                     <p>
                         <span>
-                            Входные аудиозаписи переводятся в спектрограмму. 
-                            Затем нейросетевой алгоритм обрабатывает данные изображения для выявления пересекающихся частей. 
+                            Входные аудиозаписи переводятся в спектрограмму.
+                            Затем нейросетевой алгоритм обрабатывает данные изображения для выявления пересекающихся частей.
                         </span>
                     </p>
 
@@ -23,7 +23,7 @@ function DescriptionPanel()
 
             <div id="example-container">
 
-                <h2 class="title" id="example-title">Пример</h2><br/>
+                <h2 className="title" id="example-title">Пример</h2><br/>
 
                 <div id="image-container">
                     <img src="spectr.png" alt="example" id="example-image"/><br/>
@@ -34,7 +34,7 @@ function DescriptionPanel()
 
             <div id="params-container">
 
-                <h2 class="title" id="params-title">Параметры</h2><br/>
+                <h2 className="title" id="params-title">Параметры</h2><br/>
 
                     <table id="params-table">
 
@@ -68,7 +68,7 @@ function DescriptionPanel()
 
             <div id="application-container">
 
-                <h2 class="title" id="application-title">Область применения</h2>
+                <h2 className="title" id="application-title">Область применения</h2>
 
                 <ul>
                     <li>Отслеживание плагиата на медиа-платформах</li>
