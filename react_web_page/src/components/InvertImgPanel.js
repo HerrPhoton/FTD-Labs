@@ -13,7 +13,7 @@ function InvertImgPanel()
 
     const handleResClick = async () =>
     {
-        await fetch('http://127.0.0.1:8000/invert_image/',
+        await fetch('http://127.0.0.1:8080/invert_image/',
         {
             method: 'POST',
             headers: {

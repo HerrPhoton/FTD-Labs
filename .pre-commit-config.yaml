@@ -13,14 +13,20 @@ repos:
       - id: debug-statements
       - id: requirements-txt-fixer
 
-  - repo: https://github.com/psf/black
-    rev: 24.8.0
+  - repo: https://github.com/google/yapf
+    rev: v0.40.2
     hooks:
-      - id: black
+      - id: yapf
         args:
           [
-            "--target-version=py310",
-            "--line-length=128",
+            "--in-place",
+            "--style",
+            "{
+              based_on_style: pep8,
+              column_limit: 128,
+              split_arguments_when_comma_terminated: true,
+              spaces_around_subscript_colon: true,
+            }",
           ]
 
   - repo: https://github.com/PyCQA/isort

@@ -7,7 +7,7 @@ function PostsPanel()
 
     const fetchPosts = async () =>
     {
-        await fetch('http://127.0.0.1:8000/posts/')
+        await fetch('http://127.0.0.1:8080/posts/')
         .then(response => response.json())
         .then(data => setPosts(data.posts))
     };

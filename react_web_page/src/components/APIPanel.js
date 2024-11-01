@@ -7,7 +7,7 @@ function APIPanel()
 
     const fetchSpec = async () =>
     {
-        await fetch('http://localhost:8000/openapi.json')
+        await fetch('http://localhost:8080/openapi.json')
         .then(response => response.json())
         .then(data => setSpec(data));
     };
