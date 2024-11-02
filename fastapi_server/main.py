@@ -1,9 +1,8 @@
-from importlib import import_module
-
 import uvicorn
 from fastapi import FastAPI
-from api.routes import __all__ as routes
-from src.core.config import settings
+from .api.routes import router
+from .core.config import settings
+from .db.base import Base, engine
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
@@ -11,8 +10,7 @@ app = FastAPI(
     version=settings.VERSION,
 )
 
-for route in routes:
-    app.include_router(import_module(route).router)
+app.include_router(router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -22,5 +20,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Base.metadata.drop_all(bind=engine)
+Base.metadata.create_all(bind=engine)
+
 if __name__ == "__main__":
-    uvicorn.run("src.main:app", port=8080, reload=True)
+    uvicorn.run("fastapi_server.main:app", port=8080, reload=True)

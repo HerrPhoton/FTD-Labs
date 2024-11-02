@@ -1,5 +1,5 @@
 from sqlalchemy import Text, Column, Integer
-from src.db.base import Base
+from fastapi_server.db.base import Base
 from sqlalchemy.orm import relationship
 
 

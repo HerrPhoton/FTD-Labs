@@ -1,5 +1,3 @@
-fastapi_server/scripts/
-fastapi_server/venv/
-fastapi_server/.env
+.env
 /**/__pycache__/
 scripts/

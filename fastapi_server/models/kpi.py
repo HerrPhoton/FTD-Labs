@@ -1,6 +1,6 @@
 from sqlalchemy import Text, Column, Integer, BigInteger
 from sqlalchemy import ForeignKey
-from src.db.base import Base
+from ..db.base import Base
 from sqlalchemy.orm import relationship
 
 

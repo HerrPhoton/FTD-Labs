@@ -1,7 +1,7 @@
 import base64
 
 from pydantic import BaseModel, field_validator
-from src.schemas.responses import DataResponse
+from .base_responses import DataResponse
 
 
 class Base64Image(BaseModel):
@@ -27,8 +27,5 @@ class Base64Image(BaseModel):
 class ImageBase(BaseModel):
     base64_image: Base64Image
 
-
-class ImageResponse(DataResponse):
-    data: dict = {
-        "base64_image": Base64Image,
-    }
+class ImageResponse(DataResponse[ImageBase]):
+    data: Base64Image

@@ -1,8 +1,8 @@
 import requests
 from fastapi import Response, APIRouter, status
-from src.core.config import settings
-from src.schemas.posts import PostsResponse
-from src.schemas.responses import ErrorResponse
+from ...core.config import settings
+from ...schemas.posts import PostsResponse
+from ...schemas.base_responses import ErrorResponse
 
 router = APIRouter(prefix="/posts", tags=["posts"])
 

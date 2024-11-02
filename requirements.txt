@@ -1,0 +1,8 @@
+fastapi[all]==0.115.4
+numpy==2.1.2
+opencv_python==4.10.0.84
+pydantic==2.9.2
+pydantic_settings==2.6.1
+Requests==2.32.3
+SQLAlchemy==2.0.36
+uvicorn==0.32.0

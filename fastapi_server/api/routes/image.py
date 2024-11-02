@@ -1,8 +1,8 @@
 import cv2
 from fastapi import Response, APIRouter, status
-from src.schemas.image import ImageBase, ImageResponse
-from src.utils.convert import image_to_base64, image_from_base64
-from src.schemas.responses import ErrorResponse
+from ...schemas.image import ImageBase, ImageResponse
+from ...utils.convert import image_to_base64, image_from_base64
+from ...schemas.base_responses import ErrorResponse
 
 router = APIRouter(prefix="/image", tags=["image"])
 

@@ -18,10 +18,6 @@ class Settings(BaseSettings):
 
     @property
     def db_url(self):
-
-        if self.DATABASE_URL:
-            return self.DATABASE_URL
-
         return (f"postgresql+psycopg2://"
                 f"{self.POSTGRES_USER}:"
                 f"{self.POSTGRES_PASSWORD}@"
