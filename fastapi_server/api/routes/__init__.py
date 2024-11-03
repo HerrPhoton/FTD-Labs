@@ -1,5 +1,6 @@
 from fastapi import APIRouter
-from . import pages, posts, image
+
+from . import image, pages, posts
 
 router = APIRouter()
 

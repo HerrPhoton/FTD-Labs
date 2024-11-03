@@ -3,7 +3,7 @@ import { usePageTracking } from '../hooks/usePageTracking';
 function IntroPanel()
 {
     usePageTracking('intro');
-    
+
     return (
         <div id="intro-content-container" className="page">
 

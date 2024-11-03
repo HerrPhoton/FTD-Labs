@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 
-export function usePageTracking(pageName) 
+export function usePageTracking(pageName)
 {
-    useEffect(() => 
+    useEffect(() =>
     {
         const startTime = Date.now();
-        
-        const handleBeforeUnload = () => 
+
+        const handleBeforeUnload = () =>
             {
                 const endTime = Date.now();
                 const timeSpent = Math.round((endTime - startTime) / 1000);
-                
+
                 fetch(`http://localhost:8080/pages/${pageName}/kpi`, {
                     method: 'PUT',
                     headers: {
@@ -23,10 +23,10 @@ export function usePageTracking(pageName)
 
         window.addEventListener('beforeunload', handleBeforeUnload);
 
-        return () => 
+        return () =>
         {
             window.removeEventListener('beforeunload', handleBeforeUnload);
-            
+
             const endTime = Date.now();
             const timeSpent = Math.round((endTime - startTime) / 1000);
 

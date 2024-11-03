@@ -1,6 +1,7 @@
 from sqlalchemy.orm import Session
-from ..models.kpi import KPI
+
 from .base import BaseRepository
+from ..models.kpi import KPI
 
 
 class KPIRepository(BaseRepository[KPI]):
@@ -23,7 +24,7 @@ class KPIRepository(BaseRepository[KPI]):
             self.session.refresh(kpi)
 
         return kpi
-    
+
     def update_visits_num(self, page_id: int):
         kpi = self.get_by_page_id(page_id)
 
@@ -32,4 +33,4 @@ class KPIRepository(BaseRepository[KPI]):
             self.session.commit()
             self.session.refresh(kpi)
 
-        return kpi        
+        return kpi

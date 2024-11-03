@@ -3,20 +3,20 @@ import SwaggerUI from 'swagger-ui-react';
 import { usePageTracking } from '../hooks/usePageTracking';
 import root from 'react-shadow';
 
-function APIPanel() 
+function APIPanel()
 {
     usePageTracking('api');
-    
+
     const [spec, setSpec] = useState(null);
 
-    const fetchSpec = async () => 
+    const fetchSpec = async () =>
     {
         await fetch('http://localhost:8080/openapi.json')
         .then(response => response.json())
         .then(data => setSpec(data));
     };
 
-    useEffect(() => 
+    useEffect(() =>
     {
         fetchSpec();
     }, []);

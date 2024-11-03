@@ -27,7 +27,7 @@ function StatisticsPanel()
                         <th>Общее время, с</th>
                     </tr>
 
-                    {spec.data.map((page) => 
+                    {spec.data.map((page) =>
                     (
                         <tr key={page.id}>
                             <td>{page.id}</td>

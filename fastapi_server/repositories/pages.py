@@ -1,10 +1,11 @@
 import os
 
 from sqlalchemy.orm import Session
+
+from .base import BaseRepository
 from ..models.kpi import KPI
 from ..core.config import settings
 from ..models.pages import Page
-from .base import BaseRepository
 
 
 class PageRepository(BaseRepository[Page]):

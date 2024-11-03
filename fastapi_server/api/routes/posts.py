@@ -1,5 +1,6 @@
 import requests
 from fastapi import Response, APIRouter, status
+
 from ...core.config import settings
 from ...schemas.posts import PostsResponse
 from ...schemas.base_responses import ErrorResponse

@@ -1,5 +1,6 @@
 import cv2
 from fastapi import Response, APIRouter, status
+
 from ...schemas.image import Base64Image, ImageResponse
 from ...utils.convert import image_to_base64, image_from_base64
 from ...schemas.base_responses import ErrorResponse
@@ -25,8 +26,7 @@ async def invert_image(request: Base64Image, response: Response):
         inverted_image = cv2.bitwise_not(image)
         invert_image_base64 = image_to_base64(inverted_image)
 
-        return ImageResponse(status="success", 
-                             data=Base64Image(base64_image=invert_image_base64))
+        return ImageResponse(status="success", data=Base64Image(base64_image=invert_image_base64))
 
     except Exception as e:
         response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR

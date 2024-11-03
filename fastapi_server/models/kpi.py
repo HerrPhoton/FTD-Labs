@@ -1,7 +1,8 @@
 from sqlalchemy import Text, Column, Integer, BigInteger
 from sqlalchemy import ForeignKey
-from ..db.base import Base
 from sqlalchemy.orm import relationship
+
+from ..db.base import Base
 
 
 class KPI(Base):
