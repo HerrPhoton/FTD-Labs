@@ -74,8 +74,17 @@ async def pages_kpi(response: Response,
         pages = pages_repo.get_all()
         kpis = kpi_repo.get_all()
 
-        data = [PageWithKPIData(id=page.id, name=page.name, time=kpi.spent_time, visits=kpi.visits_num) 
-                for page, kpi in zip(pages, kpis)]
+        data = []
+        for page in pages:
+            kpi = kpi_repo.get_by_page_id(page.id)
+            
+            if kpi:
+                data.append(PageWithKPIData(
+                    id=page.id,
+                    name=page.name,
+                    time=kpi.spent_time,
+                    visits=kpi.visits_num
+                ))
 
         return PagesKPIResponse(status="success", data=data)
     
@@ -88,7 +97,7 @@ async def pages_kpi(response: Response,
                              details=str(e))
  
 
-@router.get("/{page_id}",
+@router.get("/{page_name}",
             response_model=None,
             status_code=status.HTTP_200_OK,
             responses={
@@ -99,20 +108,30 @@ async def pages_kpi(response: Response,
                     "model": ErrorResponse
                 }
             })
-async def get_page(page_id: int, response: Response, session: scoped_session = Depends(get_session)):
+async def get_page(page_name: str, response: Response, session: scoped_session = Depends(get_session)):
 
-    page = session.query(Page).filter(Page.id == page_id).first()
+    try:
+        pages_repo = PageRepository(session)
+        page = pages_repo.get_by_name(page_name)
 
-    if not page:
-        response.status_code = status.HTTP_404_NOT_FOUND
+        if not page:
+            response.status_code = status.HTTP_404_NOT_FOUND
 
-        return ErrorResponse(status="error", error_code="PAGE_NOT_FOUND", message=f"Page with id {page_id} not found")
+            return ErrorResponse(status="error", error_code="PAGE_NOT_FOUND", message=f"Page with name {page_name} not found")
 
-    return PageResponse(status="success",
-                        data=PageResponseData(id=page.id, name=page.name))
+        return PageResponse(status="success",
+                            data=PageResponseData(id=page.id, name=page.name))
+    
+    except Exception as e:
+        response.status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+
+        return ErrorResponse(status="error", 
+                             error_code="GET_FAILED", 
+                             message="Failed to get page", 
+                             details=str(e))
    
 
-@router.put("/{page_id}/kpi",
+@router.put("/{page_name}/kpi",
             status_code=status.HTTP_200_OK,
             responses={
             status.HTTP_200_OK: {
@@ -125,24 +144,24 @@ async def get_page(page_id: int, response: Response, session: scoped_session = D
                     "model": ErrorResponse
                 }
         })
-async def update_kpi(page_id: int,
-                     time_spent_request: KPIBase,
+async def update_kpi(page_name: str,
+                     kpi_request: KPIBase,
                      response: Response,
                      session: scoped_session = Depends(get_session)):
     
     try:
         kpi_repo = KPIRepository(session)
-        kpi = kpi_repo.get_by_page_id(page_id)
+        kpi = kpi_repo.get_by_page_name(page_name)
 
         if kpi is None:
             response.status_code = status.HTTP_404_NOT_FOUND
 
             return ErrorResponse(status="error",
                                  error_code="PAGE_DOES_NOT_EXISTS",
-                                 message=f"Page with id {page_id} does not exist")
+                                 message=f"Page with name {page_name} does not exist")
         
-        kpi = kpi_repo.update_visits_num(page_id)
-        kpi = kpi_repo.update_spent_time(page_id, time_spent_request.time)
+        kpi = kpi_repo.update_visits_num(kpi.page_id)
+        kpi = kpi_repo.update_spent_time(kpi.page_id, kpi_request.time)
 
         return KPIResponse(status="success", 
                            data=KPIResponseData(time=kpi.spent_time, visits=kpi.visits_num))

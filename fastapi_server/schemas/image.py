@@ -10,7 +10,7 @@ class Base64Image(BaseModel):
     @field_validator("base64_image", mode="before")
     def validate_base64_image(cls, value):
 
-        if not value.startswith(("data:image/jpeg;base64,", "data:image/png;base64,")):
+        if not value.startswith(("data:image/jpeg;base64,", "data:image/jpg;base64,", "data:image/png;base64,")):
             raise ValueError("base64_image must start with a valid base64 prefix,"
                              "e.g., 'data:image/jpeg;base64,' or 'data:image/png;base64,'")
 
@@ -24,8 +24,5 @@ class Base64Image(BaseModel):
             raise ValueError("base64_image must be a valid base64-encoded string")
 
 
-class ImageBase(BaseModel):
-    base64_image: Base64Image
-
-class ImageResponse(DataResponse[ImageBase]):
+class ImageResponse(DataResponse[Base64Image]):
     data: Base64Image

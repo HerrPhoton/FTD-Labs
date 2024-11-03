@@ -1,5 +1,9 @@
+import { usePageTracking } from '../hooks/usePageTracking';
+
 function ConclusionPanel()
 {
+    usePageTracking('conclusion');
+    
     return (
         <div id="conclusion-content-container" className="page">
 

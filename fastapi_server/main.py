@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
+    servers=[{"url": "http://localhost:8080"}]
 )
 
 app.include_router(router)
@@ -20,7 +21,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Base.metadata.drop_all(bind=engine)
+#Base.metadata.drop_all(bind=engine)
 Base.metadata.create_all(bind=engine)
 
 if __name__ == "__main__":

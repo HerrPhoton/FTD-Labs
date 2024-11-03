@@ -1,5 +1,9 @@
+import { usePageTracking } from '../hooks/usePageTracking';
+
 function DescriptionPanel()
 {
+    usePageTracking('description');
+    
     return (
         <div id="description-content-container" className="page">
 

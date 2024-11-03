@@ -13,7 +13,7 @@ function InvertImgPanel()
 
     const handleResClick = async () =>
     {
-        await fetch('http://127.0.0.1:8080/invert_image/',
+        await fetch('http://127.0.0.1:8080/image/invert',
         {
             method: 'POST',
             headers: {
@@ -22,7 +22,7 @@ function InvertImgPanel()
             body: JSON.stringify({ base64_image: srcImage }),
         })
         .then(response => response.json())
-        .then(data => setResImage(data.inverted_image))
+        .then(data => setResImage(data.data.base64_image))
     };
 
     const handleFileChange = (event) =>

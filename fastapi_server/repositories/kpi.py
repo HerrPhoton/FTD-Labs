@@ -11,6 +11,9 @@ class KPIRepository(BaseRepository[KPI]):
     def get_by_page_id(self, page_id: int):
         return self.get_by_field("page_id", page_id)
 
+    def get_by_page_name(self, page_name: str):
+        return self.session.query(KPI).join(KPI.page).filter_by(name=page_name).first()
+
     def update_spent_time(self, page_id: int, time: int):
         kpi = self.get_by_page_id(page_id)
 

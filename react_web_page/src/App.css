@@ -35,6 +35,24 @@ h2:hover::after {
   padding-right: 2%;
 }
 
+.api {
+  width: 90vw;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+}
+
+#api-content-container.api {
+  background: white;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.swagger-ui {
+  margin-top: 0;
+  padding-top: 0;
+}
+
 #nav-panel-container {
   position: fixed;
   top: 0;

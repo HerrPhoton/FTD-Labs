@@ -18,6 +18,6 @@ def image_to_base64(image: np.ndarray):
 
     _, buffer = cv2.imencode(".jpg", image)
     image_base64 = base64.b64encode(buffer).decode("utf-8")
-    image_base64 = "data:image/jpg;base64, " + image_base64
+    image_base64 = "data:image/jpg;base64," + image_base64
 
     return image_base64

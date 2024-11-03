@@ -9,7 +9,7 @@ function PostsPanel()
     {
         await fetch('http://127.0.0.1:8080/posts/')
         .then(response => response.json())
-        .then(data => setPosts(data.posts))
+        .then(data => setPosts(data.data.posts))
     };
 
     useEffect(() =>
