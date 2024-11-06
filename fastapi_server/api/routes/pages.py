@@ -1,7 +1,7 @@
 from fastapi import Depends, Response, APIRouter, status
 from sqlalchemy.orm import scoped_session
 
-from ...db.base import get_session
+from ...core.db import get_session
 from ...schemas.kpi import KPIBase, KPIResponse, KPIResponseData
 from ...schemas.pages import PageBase, PageResponse
 from ...schemas.pages import PageWithKPIData, PageResponseData

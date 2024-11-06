@@ -1,7 +1,7 @@
 from sqlalchemy import Text, Column, Integer
 from sqlalchemy.orm import relationship
 
-from fastapi_server.db.base import Base
+from ..core.db import Base
 
 
 class Page(Base):
